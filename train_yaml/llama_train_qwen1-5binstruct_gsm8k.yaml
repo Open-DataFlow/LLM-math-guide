@@ -1,0 +1,51 @@
+### model
+model_name_or_path: /mnt/data1/xiaochen/llm/models/Qwen2.5-1.5B-Instruct # 使用下载好的Qwen2.5-7b
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+report_to: tensorboard    # Tensorboard设置
+logging_dir: ./log_output/qwen2-5_1-5b_instruct_gsm8k_full_llamafactory 
+finetuning_type: lora
+lora_rank: 16
+lora_target: all
+flash_attn: fa2
+
+### dataset
+dataset_dir: /mnt/data1/xiaochen/llm/datasets/openai___gsm8k/main/0.0.0/e53f048856ff4f594e959d75785d2c2d37b678ee
+dataset: gsm8k_math_train
+template: qwen
+cutoff_len: 1024      # 上下文最大长度（GSM8k一般不超过此长度）
+max_samples: null     # Null 代表使用全部数据
+overwrite_cache: true # 重新处理数据时强制刷新缓存
+preprocessing_num_workers: 16 # 数据预处理并行进程数
+dataloader_num_workers: 4
+
+### output
+output_dir: ./output/qwen2-5_1-5b_instruct_gsm8k_lora_llamafactory
+logging_steps: 10
+save_steps: 100
+plot_loss: true
+overwrite_output_dir: true
+save_only_model: false
+
+### train
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 4
+learning_rate: 3.0e-5     # 
+num_train_epochs: 6       # GSM8k需要更多Epoch学习推理逻辑
+max_grad_norm: 0.5        # 梯度裁剪阈值
+lr_scheduler_type: cosine
+warmup_ratio: 0.15
+bf16: true
+ddp_timeout: 180000000
+resume_from_checkpoint: null
+
+### eval
+# eval_dataset: alpaca_en_demo 
+val_size: 0.1
+per_device_eval_batch_size: 4
+eval_strategy: steps
+eval_steps: 100   # 每100步验证一次
+ 

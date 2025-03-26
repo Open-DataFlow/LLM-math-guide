@@ -1,5 +1,5 @@
 ### model
-model_name_or_path: /data/xiaochen/llm/models/Qwen2.5-7B-Instruct # 使用下载好的Qwen2.5-7b
+model_name_or_path: /mnt/data1/xiaochen/llm/models/Qwen2.5-7B-Instruct # 使用下载好的Qwen2.5-7b
 trust_remote_code: true
 
 ### method
@@ -13,7 +13,7 @@ lora_target: all
 flash_attn: fa2
 
 ### dataset
-dataset_dir: /data/xiaochen/llm/dataset/gsm8k/openai___gsm8k/main/0.0.0/e53f048856ff4f594e959d75785d2c2d37b678ee
+dataset_dir: /mnt/data1/xiaochen/llm/datasets/openai___gsm8k/main/0.0.0/e53f048856ff4f594e959d75785d2c2d37b678ee
 dataset: gsm8k_math_train
 template: qwen
 cutoff_len: 1024      # 上下文最大长度（GSM8k一般不超过此长度）

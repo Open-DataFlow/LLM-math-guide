@@ -1,0 +1,1 @@
+lm_eval --model hf --model_args pretrained="/mnt/data1/xiaochen/llm/models/qwen-gsm8k-sft/Qwen2.5-1.5B-Instruct" --tasks gsm8k --device cuda:0 --batch_size 8 --output_path ./eval_results --num_fewshot 0

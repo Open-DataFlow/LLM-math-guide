@@ -1,0 +1,13 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: /mnt/data1/xiaochen/llm/models/Qwen2.5-1.5B-Instruct
+adapter_name_or_path: /mnt/data1/xiaochen/workspace/LLM-math-guide/output/qwen2-5_1-5b_instruct_gsm8k_lora_llamafactory/checkpoint-400
+template: qwen
+trust_remote_code: true
+
+### export
+export_dir: /mnt/data1/xiaochen/llm/models/qwen-gsm8k-sft/Qwen2.5-1.5B-Instruct
+export_size: 5  # export_size: 5 表示每个导出文件的大小上限为 5 GB。
+export_device: cpu
+export_legacy_format: false
