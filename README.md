@@ -87,7 +87,7 @@ modelscope download --model Qwen/Qwen2.5-7B-Instruct --local_dir /mnt/data1/xiao
 同理[Qwen2.5-1.5B-Instruct](https://www.modelscope.cn/models/Qwen/Qwen2.5-7B-Instruct/)的下载：
 modelscope download --model Qwen/Qwen2.5-1.5B-Instruct --local_dir /mnt/data1/xiaochen/llm/models/Qwen2.5-1.5B-Instruct
 ## 模型训练
-LLAMA-FACTORY目前的训练通过一个`yaml`文件管理所有的训练参数。官方提供了大量的样例一共参考：[Github的examples](https://github.com/hiyouga/LLaMA-Factory/tree/main/examples/train_lora)。
+LLAMA-FACTORY目前的训练通过一个`yaml`文件管理所有的训练参数。官方提供了大量的样例以供参考：[Github的examples](https://github.com/hiyouga/LLaMA-Factory/tree/main/examples/train_lora)。
 
 这里提供本仓库所使用的yaml文件以供参考，所有的`yaml`都在[./train_yaml](./train_yaml)下。
 ```yaml
